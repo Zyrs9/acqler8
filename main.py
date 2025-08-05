@@ -15,10 +15,21 @@ class KeyEventFilter(QObject):
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.KeyPress:
-            if self.morse_handler.handle_key(event.key()):
+            key = event.key()
+
+            # ENTER = clear all
+            if key == Qt.Key_Return or key == Qt.Key_Enter:
+                self.morse_handler.clear()
                 self.update_callback()
                 return True
+
+            # Handle Morse key input
+            if self.morse_handler.handle_key(key):
+                self.update_callback()
+                return True
+
         return False
+
 
 
 class MyApp(QWidget):
@@ -38,7 +49,7 @@ class MyApp(QWidget):
     def init_ui(self):
         layout = QVBoxLayout()
 
-        self.label = QLabel("Type Morse: Q (.)  E (-)  Space = next letter  Tab = next word")
+        self.label = QLabel("Q=dot (.), E=dash (-), SPACE=letter, \nTAB=word, ENTER=clear, BACKSPACE=backspace both in buffer or text")
         layout.addWidget(self.label)
 
         self.morse_display = QTextEdit()
