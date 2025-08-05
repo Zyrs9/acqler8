@@ -1,5 +1,4 @@
-# morse_dict.py
-
+# dicts.py
 MORSE_CODE_DICT = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
     'E': '.',  'F': '..-.', 'G': '--.',  'H': '....',
@@ -27,6 +26,35 @@ TURKISH_REPLACEMENTS = {
     'ı': 'i',
     'İ': 'I'
 }
+NATO_PHONETIC_DICT = {
+    "A": "Alpha",
+    "B": "Bravo",
+    "C": "Charlie",
+    "D": "Delta",
+    "E": "Echo",
+    "F": "Foxtrot",
+    "G": "Golf",
+    "H": "Hotel",
+    "I": "India",
+    "J": "Juliett",
+    "K": "Kilo",
+    "L": "Lima",
+    "M": "Mike",
+    "N": "November",
+    "O": "Oscar",
+    "P": "Papa",
+    "Q": "Quebec",
+    "R": "Romeo",
+    "S": "Sierra",
+    "T": "Tango",
+    "U": "Uniform",
+    "V": "Victor",
+    "W": "Whiskey",
+    "X": "X-ray",
+    "Y": "Yankee",
+    "Z": "Zulu"
+}
+
 
 def normalize_turkish_characters(text):
     result = []

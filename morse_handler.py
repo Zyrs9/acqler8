@@ -1,5 +1,5 @@
 # morse_handler.py
-import morse_dict
+import dicts
 
 
 

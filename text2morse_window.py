@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QPushButton,
     QTextEdit, QLineEdit
 )
-from morse_dict import MORSE_CODE_DICT, normalize_turkish_characters
+from dicts import MORSE_CODE_DICT, normalize_turkish_characters
 
 
 
