@@ -31,7 +31,8 @@ See `requirements.txt` for exact versions.
 - `main_menu.py` — Launch menu
 - `tra.py` — Real-time Morse input app
 - `text2morse_window.py` — Text → Morse converter
-- `svg2morse.py` — Morse from green signal image
-- `morse2svg.py` — SVG from Morse code
+- `svg2morse.py` — Morse from green signal image (Courtesy of https://github.com/aalex954)
+- `morse2svg.py` — SVG from Morse code           (Courtesy of https://github.com/aalex954)
 - `morse_handler.py` — Handles key input logic
 - `morse_dict.py` — Morse alphabet + Turkish replacements
+
