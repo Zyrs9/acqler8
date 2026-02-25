@@ -1,6 +1,10 @@
 # phonetic_drill.py
 # Phonetic Alphabet Drill — flash a letter, user types the NATO word (or reverse).
 
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # training/
+
 import random
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel,

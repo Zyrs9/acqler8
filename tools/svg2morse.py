@@ -2,6 +2,10 @@
 # Decode Morse code from an image by reading green signal bars.
 # Runs as a proper QWidget so it returns to the main menu on close.
 
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # tools/
+
 from PIL import Image
 import numpy as np
 from itertools import groupby

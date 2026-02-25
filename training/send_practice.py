@@ -1,3 +1,7 @@
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # training/
+
 import random
 import time
 from PyQt5.QtWidgets import (

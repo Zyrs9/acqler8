@@ -1,6 +1,10 @@
 # qcode_reference.py
 # Q-Code and CW Abbreviations reference viewer with live search.
 
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # tools/
+
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QLineEdit, QTableWidget, QTableWidgetItem, QTabWidget, QHeaderView, QFrame

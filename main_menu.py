@@ -1,5 +1,3 @@
-# main_menu.py
-
 import sys
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QPushButton,
@@ -7,16 +5,16 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QFont, QColor, QPalette
 from PyQt5.QtCore import Qt
-from tra import MyApp
-from morse2svg import run_morse2svg_gui
-from svg2morse import Svg2MorseWindow
-from morse_exercise import MorseExerciseApp
-from text2morse_window import TextToMorseWindow
-from wpm_trainer import WpmTrainer
-from send_practice import SendPractice
-from qcode_reference import ReferenceWindow
-from phonetic_drill import PhoneticDrill
+from tools.morse2svg import run_morse2svg_gui
+from tools.svg2morse import Svg2MorseWindow
+from training.morse_exercise import MorseExerciseApp
+from tools.text2morse_window import TextToMorseWindow
+from training.wpm_trainer import WpmTrainer
+from training.send_practice import SendPractice
+from tools.qcode_reference import ReferenceWindow
+from training.phonetic_drill import PhoneticDrill
 from session_stats import StatsViewer
+from tools.tra import MyApp
 
 
 # ── Dark theme stylesheet ─────────────────────────────────────────────────────

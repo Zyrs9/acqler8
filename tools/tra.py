@@ -1,4 +1,7 @@
-import sys
+import sys, os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # tools/
+
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QLabel,
     QPushButton, QTextEdit

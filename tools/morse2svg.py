@@ -1,5 +1,9 @@
 # morse2svg.py
 
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))  # root
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))                    # tools/
+
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as patches

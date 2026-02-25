@@ -1,5 +1,8 @@
+import sys as _sys, os
+_sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # project root
+_sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))                   # this dir
+
 import random
-import os
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QHBoxLayout
 )
@@ -9,9 +12,9 @@ from dicts import MORSE_CODE_DICT
 import cw_audio
 from session_stats import log_session
 
-# Resolve assets relative to this script's location regardless of cwd
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-_MNEMONIC_DIR = os.path.join(_SCRIPT_DIR, "mnemonic_letter_images")
+# Resolve assets relative to the PROJECT ROOT (not this file's dir)
+_PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_MNEMONIC_DIR = os.path.join(_PROJECT_ROOT, "mnemonic_letter_images")
 
 # States
 STATE_WAITING  = "waiting"   # showing letter, waiting for user input
