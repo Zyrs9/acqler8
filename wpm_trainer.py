@@ -28,7 +28,7 @@ CW_WORDS = [
 ]
 
 # ── Callsign generator ────────────────────────────────────────────────────────
-_PREFIXES = ["W", "K", "N", "AA", "VK", "G", "F", "DL", "JA", "HS"]
+_PREFIXES = ["W", "K", "N", "AA", "VK", "G", "F", "DL", "JA", "HS", "TA"]
 _LETTERS  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 _DIGITS   = "0123456789"
 
