@@ -1,6 +1,8 @@
 # morse_handler.py
 import dicts
 
+# Reverse the dict: morse pattern -> letter (e.g. '.-' -> 'A')
+MORSE_TO_CHAR = {v: k for k, v in dicts.MORSE_CODE_DICT.items()}
 
 
 class MorseHandler:
@@ -27,7 +29,7 @@ class MorseHandler:
 
     def _commit_current_symbol(self):
         if self.current_symbol:
-            char = morse_dict.MORSE_CODE_DICT.get(self.current_symbol, '?')
+            char = MORSE_TO_CHAR.get(self.current_symbol, '?')
             self.decoded_text += char
             self.current_symbol = ""
 

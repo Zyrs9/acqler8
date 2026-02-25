@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt, QObject, QEvent
 from morse_handler import MorseHandler
 from text2morse_window import TextToMorseWindow
+import cw_audio
 
 
 class KeyEventFilter(QObject):
@@ -23,6 +24,12 @@ class KeyEventFilter(QObject):
                 self.update_callback()
                 return True
 
+            # Play sidetone feedback
+            if key == Qt.Key_Q:
+                cw_audio.play_dit()
+            elif key == Qt.Key_E:
+                cw_audio.play_dah()
+
             if self.morse_handler.handle_key(key):
                 self.update_callback()
                 return True
@@ -30,13 +37,14 @@ class KeyEventFilter(QObject):
 
 
 class MyApp(QWidget):
-    def __init__(self):
+    def __init__(self, return_callback=None):
         super().__init__()
         self.setWindowTitle("Morse Input (Real-Time)")
         self.setGeometry(100, 100, 600, 500)
 
         self.morse = MorseHandler()
         self.text_to_morse_window = None
+        self.return_callback = return_callback
 
         self.init_ui()
 
@@ -94,6 +102,18 @@ class MyApp(QWidget):
             self.text_to_morse_window.hide()
 
         self.show()  # bring main window back
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            self.close()
+        else:
+            super().keyPressEvent(event)
+
+    def closeEvent(self, event):
+        QApplication.instance().removeEventFilter(self.key_filter)
+        if self.return_callback:
+            self.return_callback()
+        event.accept()
 
 
 if __name__ == "__main__":
